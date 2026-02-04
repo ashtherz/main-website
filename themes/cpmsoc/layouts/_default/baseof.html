@@ -1,27 +1,133 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 {{- partial "head.html" . -}}
 
 <body>
   {{- partial "header.html" . -}}
-  <div id="content">
-    <div class="container">
-      {{- block "main" . }}{{- end }}
-    </div>
-  </div>
+  <main id="content">
+    {{- block "main" . }}{{- end }}
+  </main>
   {{- partial "footer.html" . -}}
-  <script type="text/javascript" src="/js/site.js" defer></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/components/prism-core.min.js" integrity="sha512-xR+IAyN+t9EBIOOJw5m83FTVMDsPd63IhJ3ElP4gmfUFnQlX9+eWGLp3P4t3gIjpo2Z1JzqtW/5cjgn+oru3yQ==" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/plugins/autoloader/prism-autoloader.min.js" integrity="sha512-zc7WDnCM3aom2EziyDIRAtQg1mVXLdILE09Bo+aE1xk0AM2c2cVLfSW9NrxE5tKTX44WBY0Z2HClZ05ur9vB6A==" crossorigin="anonymous"></script>
+
+  <!-- Interactive JavaScript -->
   <script>
-    MathJax = {
-      tex: {
-        inlineMath: [['$', '$'], ['\\(', '\\)']]
+    // Mobile navbar toggle
+    document.addEventListener('DOMContentLoaded', () => {
+      const burger = document.querySelector('.navbar-burger');
+      const menu = document.getElementById('navbar');
+
+      if (burger && menu) {
+        burger.addEventListener('click', () => {
+          burger.classList.toggle('is-active');
+          menu.classList.toggle('is-active');
+        });
       }
-    };
-    </script>
-    <script id="MathJax-script" async
-      src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js">
-    </script>
+
+      // Navbar scroll effect
+      const navbar = document.querySelector('.navbar');
+      window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) {
+          navbar.classList.add('scrolled');
+        } else {
+          navbar.classList.remove('scrolled');
+        }
+      });
+
+      // Scroll animations using Intersection Observer
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      }, observerOptions);
+
+      // Observe all animated elements
+      document.querySelectorAll('.animate-on-scroll, .stagger-children').forEach(el => {
+        observer.observe(el);
+      });
+
+      // Smooth scroll for anchor links
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute('href'));
+          if (target) {
+            const navbarHeight = document.querySelector('.navbar').offsetHeight;
+            const targetPosition = target.getBoundingClientRect().top + window.pageYOffset - navbarHeight;
+            window.scrollTo({
+              top: targetPosition,
+              behavior: 'smooth'
+            });
+            // Close mobile menu if open
+            if (menu.classList.contains('is-active')) {
+              burger.classList.remove('is-active');
+              menu.classList.remove('is-active');
+            }
+          }
+        });
+      });
+
+      // Cursor sparkle effect (subtle, not overwhelming)
+      let sparkleCount = 0;
+      const maxSparkles = 3;
+
+      document.addEventListener('mousemove', (e) => {
+        if (Math.random() > 0.97 && sparkleCount < maxSparkles) {
+          createSparkle(e.clientX, e.clientY);
+        }
+      });
+
+      function createSparkle(x, y) {
+        sparkleCount++;
+        const sparkle = document.createElement('div');
+        sparkle.className = 'sparkle';
+        sparkle.style.left = x + 'px';
+        sparkle.style.top = y + 'px';
+        sparkle.style.background = getRandomColor();
+        document.body.appendChild(sparkle);
+
+        setTimeout(() => {
+          sparkle.remove();
+          sparkleCount--;
+        }, 800);
+      }
+
+      function getRandomColor() {
+        const colors = ['#ff9eb5', '#e6e6fa', '#98d4bb', '#ffcba4', '#ffd1dc'];
+        return colors[Math.floor(Math.random() * colors.length)];
+      }
+
+      // Add tilt effect to project cards
+      document.querySelectorAll('.project-card').forEach(card => {
+        card.addEventListener('mousemove', (e) => {
+          const rect = card.getBoundingClientRect();
+          const x = e.clientX - rect.left;
+          const y = e.clientY - rect.top;
+          const centerX = rect.width / 2;
+          const centerY = rect.height / 2;
+          const rotateX = (y - centerY) / 20;
+          const rotateY = (centerX - x) / 20;
+
+          card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateY(-10px)`;
+        });
+
+        card.addEventListener('mouseleave', () => {
+          card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) translateY(0)';
+        });
+      });
+
+      // Typing effect for hero subtitle (optional enhancement)
+      const highlights = document.querySelectorAll('.hero-subtitle .highlight');
+      highlights.forEach((highlight, index) => {
+        highlight.style.animation = `fadeInUp 0.5s ease-out ${0.3 + index * 0.2}s both`;
+      });
+    });
+  </script>
 </body>
 </html>

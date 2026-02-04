@@ -1,3 +1,381 @@
 {{ define "main" }}
-  {{ .Content }}
+
+<!-- Hero Section -->
+<section class="hero-section" id="home">
+  <!-- Floating decorative shapes -->
+  <div class="floating-shapes">
+    <div class="shape circle s1"></div>
+    <div class="shape square s2"></div>
+    <div class="shape triangle s3"></div>
+    <div class="shape circle s4"></div>
+    <div class="shape square s5"></div>
+    <div class="shape triangle s6"></div>
+  </div>
+
+  <div class="hero-content">
+    <div class="hero-avatar">
+      <span>👩‍💻</span>
+    </div>
+    <p class="hero-greeting">
+      <span class="wave">👋</span> Hey there, I'm
+    </p>
+    <h1 class="hero-title">Esther</h1>
+    <p class="hero-subtitle">
+      A <span class="highlight">Computer Science</span> student who loves building
+      <span class="highlight">beautiful</span> & <span class="highlight">functional</span> things
+    </p>
+    <div class="hero-cta">
+      <a href="#projects" class="btn btn-primary">
+        <i class="fas fa-sparkles"></i> View My Work
+      </a>
+      <a href="#contact" class="btn btn-secondary">
+        <i class="fas fa-envelope"></i> Say Hello
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- About Section -->
+<section class="section about-section" id="about">
+  <h2 class="section-title"><span>About Me</span></h2>
+  <p class="section-subtitle">A little bit about who I am and what I do</p>
+
+  <div class="about-content">
+    <div class="about-image animate-on-scroll">
+      <div class="hero-avatar" style="width: 280px; height: 280px; font-size: 6rem; margin: 0;">
+        <span>🌸</span>
+      </div>
+    </div>
+    <div class="about-text animate-on-scroll">
+      <h3>Nice to meet you!</h3>
+      <p>
+        I'm a passionate Computer Science student with a love for creating elegant solutions
+        to complex problems. When I'm not coding, you can find me exploring new technologies,
+        contributing to open source, or enjoying a good cup of boba tea!
+      </p>
+      <p>
+        I believe that great software should not only work well but also feel delightful to use.
+        That's why I focus on both the technical implementation and the user experience in
+        every project I work on.
+      </p>
+      <div class="about-stats">
+        <div class="stat-item">
+          <div class="stat-number">5+</div>
+          <div class="stat-label">Projects</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">3+</div>
+          <div class="stat-label">Languages</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-number">∞</div>
+          <div class="stat-label">Curiosity</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Projects Section -->
+<section class="section projects-section" id="projects">
+  <h2 class="section-title"><span>My Projects</span></h2>
+  <p class="section-subtitle">Here are some things I've built with love</p>
+
+  <div class="projects-grid stagger-children">
+    <!-- Project 1 -->
+    <div class="project-card animate-child">
+      <div class="project-image">
+        <span class="project-icon">🎮</span>
+        <div class="project-overlay">
+          <a href="#" class="project-link" title="View Code">
+            <i class="fab fa-github"></i>
+          </a>
+          <a href="#" class="project-link" title="Live Demo">
+            <i class="fas fa-external-link-alt"></i>
+          </a>
+        </div>
+      </div>
+      <div class="project-content">
+        <h3 class="project-title">Pixel Adventure Game</h3>
+        <p class="project-description">
+          A cute 2D platformer game built with Python and Pygame. Features pixel art characters and fun mechanics!
+        </p>
+        <div class="project-tags">
+          <span class="tag">Python</span>
+          <span class="tag">Pygame</span>
+          <span class="tag">Game Dev</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Project 2 -->
+    <div class="project-card animate-child">
+      <div class="project-image">
+        <span class="project-icon">📝</span>
+        <div class="project-overlay">
+          <a href="#" class="project-link" title="View Code">
+            <i class="fab fa-github"></i>
+          </a>
+          <a href="#" class="project-link" title="Live Demo">
+            <i class="fas fa-external-link-alt"></i>
+          </a>
+        </div>
+      </div>
+      <div class="project-content">
+        <h3 class="project-title">Study Buddy App</h3>
+        <p class="project-description">
+          A productivity app for students with pomodoro timer, task management, and cute motivational messages.
+        </p>
+        <div class="project-tags">
+          <span class="tag">React</span>
+          <span class="tag">Node.js</span>
+          <span class="tag">MongoDB</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Project 3 -->
+    <div class="project-card animate-child">
+      <div class="project-image">
+        <span class="project-icon">🌦️</span>
+        <div class="project-overlay">
+          <a href="#" class="project-link" title="View Code">
+            <i class="fab fa-github"></i>
+          </a>
+          <a href="#" class="project-link" title="Live Demo">
+            <i class="fas fa-external-link-alt"></i>
+          </a>
+        </div>
+      </div>
+      <div class="project-content">
+        <h3 class="project-title">Weather Vibes</h3>
+        <p class="project-description">
+          A weather app with animated backgrounds that change based on conditions. Features mood-based playlists!
+        </p>
+        <div class="project-tags">
+          <span class="tag">JavaScript</span>
+          <span class="tag">API</span>
+          <span class="tag">CSS</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Project 4 -->
+    <div class="project-card animate-child">
+      <div class="project-image">
+        <span class="project-icon">🤖</span>
+        <div class="project-overlay">
+          <a href="#" class="project-link" title="View Code">
+            <i class="fab fa-github"></i>
+          </a>
+          <a href="#" class="project-link" title="Live Demo">
+            <i class="fas fa-external-link-alt"></i>
+          </a>
+        </div>
+      </div>
+      <div class="project-content">
+        <h3 class="project-title">Discord Bot</h3>
+        <p class="project-description">
+          A multipurpose Discord bot with fun commands, music playback, and server management features.
+        </p>
+        <div class="project-tags">
+          <span class="tag">Python</span>
+          <span class="tag">Discord.py</span>
+          <span class="tag">SQLite</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Project 5 -->
+    <div class="project-card animate-child">
+      <div class="project-image">
+        <span class="project-icon">🎨</span>
+        <div class="project-overlay">
+          <a href="#" class="project-link" title="View Code">
+            <i class="fab fa-github"></i>
+          </a>
+          <a href="#" class="project-link" title="Live Demo">
+            <i class="fas fa-external-link-alt"></i>
+          </a>
+        </div>
+      </div>
+      <div class="project-content">
+        <h3 class="project-title">Portfolio Website</h3>
+        <p class="project-description">
+          This very website! A cute, interactive portfolio built with Hugo and lots of CSS animations.
+        </p>
+        <div class="project-tags">
+          <span class="tag">Hugo</span>
+          <span class="tag">SCSS</span>
+          <span class="tag">JavaScript</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Project 6 -->
+    <div class="project-card animate-child">
+      <div class="project-image">
+        <span class="project-icon">📊</span>
+        <div class="project-overlay">
+          <a href="#" class="project-link" title="View Code">
+            <i class="fab fa-github"></i>
+          </a>
+          <a href="#" class="project-link" title="Live Demo">
+            <i class="fas fa-external-link-alt"></i>
+          </a>
+        </div>
+      </div>
+      <div class="project-content">
+        <h3 class="project-title">Data Viz Dashboard</h3>
+        <p class="project-description">
+          An interactive data visualization dashboard for analyzing datasets with beautiful charts.
+        </p>
+        <div class="project-tags">
+          <span class="tag">Python</span>
+          <span class="tag">Plotly</span>
+          <span class="tag">Pandas</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Skills Section -->
+<section class="section skills-section" id="skills">
+  <h2 class="section-title"><span>My Skills</span></h2>
+  <p class="section-subtitle">Technologies and tools I love working with</p>
+
+  <div class="skills-container">
+    <div class="skill-category animate-on-scroll">
+      <h3><i class="fas fa-code"></i> Languages</h3>
+      <div class="skills-grid stagger-children">
+        <div class="skill-item animate-child">
+          <span class="skill-icon">🐍</span>
+          <span class="skill-name">Python</span>
+        </div>
+        <div class="skill-item animate-child">
+          <span class="skill-icon">🟨</span>
+          <span class="skill-name">JavaScript</span>
+        </div>
+        <div class="skill-item animate-child">
+          <span class="skill-icon">💎</span>
+          <span class="skill-name">TypeScript</span>
+        </div>
+        <div class="skill-item animate-child">
+          <span class="skill-icon">☕</span>
+          <span class="skill-name">Java</span>
+        </div>
+        <div class="skill-item animate-child">
+          <span class="skill-icon">🔷</span>
+          <span class="skill-name">C/C++</span>
+        </div>
+        <div class="skill-item animate-child">
+          <span class="skill-icon">🌐</span>
+          <span class="skill-name">HTML/CSS</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="skill-category animate-on-scroll">
+      <h3><i class="fas fa-layer-group"></i> Frameworks & Libraries</h3>
+      <div class="skills-grid stagger-children">
+        <div class="skill-item animate-child">
+          <span class="skill-icon">⚛️</span>
+          <span class="skill-name">React</span>
+        </div>
+        <div class="skill-item animate-child">
+          <span class="skill-icon">💚</span>
+          <span class="skill-name">Node.js</span>
+        </div>
+        <div class="skill-item animate-child">
+          <span class="skill-icon">🚀</span>
+          <span class="skill-name">Next.js</span>
+        </div>
+        <div class="skill-item animate-child">
+          <span class="skill-icon">🎨</span>
+          <span class="skill-name">Tailwind CSS</span>
+        </div>
+        <div class="skill-item animate-child">
+          <span class="skill-icon">🐼</span>
+          <span class="skill-name">Pandas</span>
+        </div>
+        <div class="skill-item animate-child">
+          <span class="skill-icon">🧪</span>
+          <span class="skill-name">Flask</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="skill-category animate-on-scroll">
+      <h3><i class="fas fa-tools"></i> Tools & Platforms</h3>
+      <div class="skills-grid stagger-children">
+        <div class="skill-item animate-child">
+          <span class="skill-icon">🐙</span>
+          <span class="skill-name">Git & GitHub</span>
+        </div>
+        <div class="skill-item animate-child">
+          <span class="skill-icon">🐳</span>
+          <span class="skill-name">Docker</span>
+        </div>
+        <div class="skill-item animate-child">
+          <span class="skill-icon">☁️</span>
+          <span class="skill-name">AWS</span>
+        </div>
+        <div class="skill-item animate-child">
+          <span class="skill-icon">🔥</span>
+          <span class="skill-name">Firebase</span>
+        </div>
+        <div class="skill-item animate-child">
+          <span class="skill-icon">📱</span>
+          <span class="skill-name">Figma</span>
+        </div>
+        <div class="skill-item animate-child">
+          <span class="skill-icon">🍃</span>
+          <span class="skill-name">MongoDB</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact Section -->
+<section class="section contact-section" id="contact">
+  <h2 class="section-title"><span>Let's Connect!</span></h2>
+  <p class="section-subtitle">I'd love to hear from you</p>
+
+  <div class="contact-content animate-on-scroll">
+    <p class="contact-text">
+      Whether you have a project idea, want to collaborate, or just want to say hi -
+      my inbox is always open! I'll try my best to get back to you as soon as possible.
+    </p>
+
+    <div class="contact-links">
+      <a href="https://github.com" class="contact-link" title="GitHub" target="_blank">
+        <i class="fab fa-github"></i>
+      </a>
+      <a href="https://linkedin.com" class="contact-link" title="LinkedIn" target="_blank">
+        <i class="fab fa-linkedin-in"></i>
+      </a>
+      <a href="https://twitter.com" class="contact-link" title="Twitter" target="_blank">
+        <i class="fab fa-twitter"></i>
+      </a>
+      <a href="https://discord.com" class="contact-link" title="Discord" target="_blank">
+        <i class="fab fa-discord"></i>
+      </a>
+    </div>
+
+    <div class="contact-email">
+      <a href="mailto:esther@example.com">
+        <i class="fas fa-envelope"></i> esther@example.com
+      </a>
+    </div>
+
+    <div style="margin-top: 2rem;">
+      <a href="mailto:esther@example.com" class="btn btn-primary">
+        <i class="fas fa-paper-plane"></i> Send me a message
+      </a>
+    </div>
+  </div>
+</section>
+
 {{ end }}

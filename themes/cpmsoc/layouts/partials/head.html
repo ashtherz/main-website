@@ -1,15 +1,26 @@
 <head>
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  {{ $style := resources.Get "sass/main.scss" | toCSS | postCSS | minify | fingerprint }}
-  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="{{ $style.RelPermalink }}">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.23.0/themes/prism-okaidia.min.css" integrity="sha512-mIs9kKbaw6JZFfSuo+MovjU+Ntggfoj8RwAmJbVXQ5mkAX5LlgETQEweFPI18humSPHymTb5iikEOKWF7I8ncQ==" crossorigin="anonymous" />
-  <title>UNSW CPMSoc - {{ .Title }}</title>
-  <link rel="shortcut icon" href="/assets/logosquare.png">
+  <meta name="description" content="{{ .Site.Params.description }}">
+  <meta name="author" content="{{ .Site.Params.author }}">
 
-  <meta property="og:title" content="UNSW CPMSoc">
+  <!-- Cute Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&family=Quicksand:wght@300;400;500;600;700&family=Nunito:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <!-- Styles -->
+  {{ $style := resources.Get "sass/main.scss" | toCSS | postCSS | minify | fingerprint }}
+  <link rel="stylesheet" href="{{ $style.RelPermalink }}">
+
+  <title>{{ .Site.Title }}</title>
+  <link rel="shortcut icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>✨</text></svg>">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="{{ .Site.Params.author }} - {{ .Site.Params.tagline }}">
   <meta property="og:type" content="website">
-  <meta property="og:image" content="https://www.unswcpmsoc.com/assets/logo.png">
-  <meta property="og:url" content="https://unswcpmsoc.com/">
-  <meta property="og:description" content="The UNSW Competitive Programming and Mathematics Society is a student society run by and for people love problem solving. We run regular workshops and competitions, as well as social and professional events. Everyone is welcome, regardless of prior experience!">
+  <meta property="og:description" content="{{ .Site.Params.description }}">
 </head>

@@ -1,10 +1,41 @@
-$family-sans-serif: 'Open Sans', Helvetica, 'Roboto', sans-serif;
-$background: white;
-$text: black;
+// Cute pastel color palette
+$pink-primary: #ff9eb5;
+$pink-light: #ffd1dc;
+$pink-dark: #e87a95;
+$lavender: #e6e6fa;
+$lavender-dark: #b8b8d1;
+$mint: #98d4bb;
+$mint-light: #c5e8d5;
+$peach: #ffcba4;
+$cream: #fffef2;
+$soft-white: #fefefe;
+$text-dark: #4a4a4a;
+$text-light: #6b6b6b;
 
+// Main theme colors
+$primary-color: $pink-primary;
+$secondary-color: $lavender;
+$accent-color: $mint;
+$link-color: $pink-dark;
+$background: $cream;
+$text: $text-dark;
 
-$primary-color: #4A8FE1;
-$link-color: #7C61EA;
+// Typography
+$family-sans-serif: 'Quicksand', 'Nunito', 'Open Sans', Helvetica, sans-serif;
+$family-display: 'Comfortaa', 'Quicksand', sans-serif;
 
-$text-strong: black;
+$text-strong: $text-dark;
 $link: $link-color;
+
+// Shadows
+$shadow-soft: 0 4px 15px rgba(255, 158, 181, 0.2);
+$shadow-hover: 0 8px 25px rgba(255, 158, 181, 0.35);
+$shadow-card: 0 2px 10px rgba(0, 0, 0, 0.08);
+
+// Border radius
+$radius-soft: 20px;
+$radius-round: 50px;
+
+// Transitions
+$transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+$transition-bounce: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);

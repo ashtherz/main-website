@@ -1,7 +1,12 @@
-baseURL = "https://unswcpmsoc.com/"
+baseURL = "https://esther.dev/"
 languageCode = "en-us"
-title = "UNSW Competitive Programming and Mathematics Society"
+title = "Esther | CS Student & Developer"
 theme = "cpmsoc"
+
+[params]
+  author = "Esther"
+  description = "Computer Science student passionate about building beautiful, functional software"
+  tagline = "CS Student & Developer"
 
 [markup]
   [markup.goldmark]
@@ -12,36 +17,32 @@ theme = "cpmsoc"
 
 [menu]
 
-# Main menu dropdown  items
 [[menu.main]]
-identifier = "resources"
-name = "Resources"
+identifier = "home"
+name = "Home"
+url = "/"
+weight = 1
+
+[[menu.main]]
+identifier = "about"
+name = "About"
+url = "#about"
 weight = 2
 
 [[menu.main]]
-identifier = "events"
-name = "Events"
+identifier = "projects"
+name = "Projects"
+url = "#projects"
 weight = 3
 
 [[menu.main]]
-identifier = "aboutus"
-name = "About Us"
-weight = 4 
-
-# Add blogs to resources
-[[menu.main]]
-identifier = "blog"
-name = "Blog"
-parent = "resources"
-url = "https://unswcpmsoc.wordpress.com/"
+identifier = "skills"
+name = "Skills"
+url = "#skills"
 weight = 4
 
-# Add workshops again to events
-# [[menu.main]]
-# identifier = "workshops"
-# name = "Past Workshops"
-# parent = "events"
-# url = "/workshops/"
-
-
-  
+[[menu.main]]
+identifier = "contact"
+name = "Contact"
+url = "#contact"
+weight = 5

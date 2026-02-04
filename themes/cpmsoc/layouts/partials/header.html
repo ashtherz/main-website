@@ -1,22 +1,21 @@
-<nav class="navbar" role="navigation">
+<nav class="navbar" role="navigation" aria-label="main navigation">
   <div class="container">
-  <div class="navbar-brand">
-    <a class="navbar-item" href="{{ .Site.BaseURL }}">
-      <img class="logo" src="/assets/logo.png">
-    </a>
-    <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbar">
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-      <span aria-hidden="true"></span>
-    </a>
-  </div>
-  <div id="navbar" class="navbar-menu">
-    <div class="navbar-end">
-      {{ $current := . }}
-      {{ range .Site.Menus.main }}
-        {{ partial "navbar-item" (dict "item" . "parent" $current ) }}
-      {{ end }}
+    <div class="navbar-brand">
+      <a class="navbar-item" href="{{ .Site.BaseURL }}">
+        <span style="margin-right: 8px;">✨</span> Esther
+      </a>
+      <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false" data-target="navbar">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
     </div>
-  </div>
+    <div id="navbar" class="navbar-menu">
+      <div class="navbar-end">
+        {{ range .Site.Menus.main }}
+          <a class="navbar-item" href="{{ .URL }}">{{ .Name }}</a>
+        {{ end }}
+      </div>
+    </div>
   </div>
 </nav>
